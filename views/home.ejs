@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
     <link rel="stylesheet" href="/css/home.css">
 
     <title> <%= title%> </title>
@@ -15,7 +16,6 @@
     <H1>TODO-APP</H1>
     <main>
         <div id="create-todo">
-            // form of TODO to create a task
             <form action="/create-todo" id='create-todo-form' method="POST">
                 <div id="desc">
                     <h3>Description</h3>
@@ -34,7 +34,8 @@
                     </select>
 
                     <label for="date">due-date</label>
-                    <input type="date" id="date" name="date">
+                    <!-- <input type="date" id="date" name="date"> -->
+                    <input type="text" id="date" name="date"  required placeholder="dd/mm/yyyy">
                 </div>
             </form>
         </div>
@@ -49,15 +50,13 @@
         </div>
 
     </main>
-    // form to send the ids of tasks to delete
     <form action="/delete-todo" method="POST" id="destroy-todo-form">
 
         <ul id="Todo-List">
-            // list of pending Tasks
+            <!-- // list of pending Tasks -->
             <% for(var todo of todo_list){ %>
 
             <li id="todo-container">
-                // send the Id of task's who's Checkbox is selected
                 <input type="checkbox" id="checkbox" name="$in" id="" value="<%=todo.id%>">
 
                 <div id="desc-date">
@@ -72,7 +71,7 @@
                     </p>
                     <%}%>
                 </div>
-            <span id="category-todo" style="background-color:<%=todo.color%>">
+                <!-- <span id="category-todo" style="background-color: <%= todo.color %>"> -->
                     <%=todo.category%>
                     </span>
                 </div>
@@ -80,6 +79,13 @@
             <%}%>
 </ul>
 </form>
+
+<script src=
+"https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" >
+</script>
+<script src=
+"https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" >
+</script>
 
     <script src="/js/home.js"></script>
 </body>

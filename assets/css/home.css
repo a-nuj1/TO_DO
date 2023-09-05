@@ -1,0 +1,89 @@
+body{
+    text-align: center;   
+    font-family: sans-serif;
+}
+main{
+    display: inline-block;
+    width: 50%;    
+    min-width: 40em;
+}
+
+#create-todo{
+    width: auto;
+    height: auto;
+    background-color: antiquewhite;
+    border-bottom: 2px black solid;
+    border-top: 2px black solid;
+}
+#desc{
+    display: inline-block;
+    width: inherit;
+    height: auto;
+    padding: 1em;    
+    padding-left: 0px;
+    padding-right: 0px;
+    
+ }
+#desc textarea{
+    border:0px;
+}
+select{
+    border:0px;
+}
+input{
+    border:0px;
+}
+
+#cate-date{
+    display: inline-block;
+    padding: 1em;
+    width: inherit;
+    height: auto;  
+}
+#cate-date > * {
+padding: .5em; 
+
+}
+button{
+    margin: 1em;
+    width: 9em;
+    border: 0px;
+    height: 2.5em; 
+}
+#btn-add{
+    background-color: grey;
+}
+#btn-del{
+    background-color: red;
+}
+
+
+#todo-container #checkbox{
+   display: inline;
+   margin: 1em;
+   float: left;
+}
+#Todo-List{
+    list-style: none;
+    width: 50%;
+    display: inline-block;
+    min-width: 40em;
+}
+li{
+    border-top: 2px black solid;
+}
+#desc-date{
+    display: inline-block;
+    width: 65%;
+}
+#category-todo{
+    width: 5em;
+    height: 2em;
+}
+#category-todo{
+    margin: 1em;
+    display: flex;
+    float: right;
+    justify-content: center;
+    align-items: center;
+}
