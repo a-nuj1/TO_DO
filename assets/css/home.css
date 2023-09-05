@@ -1,3 +1,53 @@
+
+#pq{
+    font-size: 1.5rem;
+    font-family: monospace;
+    color: crimson;
+
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h1 {
+    text-align: center;
+    color: grey;
+}
+
+
+#btn{
+    text-align: center;
+}
+button{
+    width: 200px;
+    font-size: large;
+    padding: 20px;
+    margin: 10px auto;
+     color: white;
+     cursor: pointer;
+     border: none;
+}
+.fa-plus{
+    
+    position: relative;
+    right: 9px;
+}
+.fa-trash-can{
+    position: relative;
+    right: 4px;
+    color: white;
+}
+.red{
+    background-color: red;
+}
+.grey{
+    background-color: rgb(25, 24, 24);
+} 
+
+
+
 body{
     text-align: center;   
     font-family: sans-serif;
@@ -11,9 +61,10 @@ main{
 #create-todo{
     width: auto;
     height: auto;
-    background-color: antiquewhite;
-    border-bottom: 2px black solid;
-    border-top: 2px black solid;
+    background-color: rgb(240, 231, 220);
+    /* background-color: whitesmoke; */
+    border-bottom: 2px solid grey;
+    border-top: 2px solid grey;
 }
 #desc{
     display: inline-block;
@@ -24,6 +75,7 @@ main{
     padding-right: 0px;
     
  }
+
 #desc textarea{
     border:0px;
 }
@@ -44,41 +96,36 @@ input{
 padding: .5em; 
 
 }
-button{
-    margin: 1em;
-    width: 9em;
-    border: 0px;
-    height: 2.5em; 
-}
-#btn-add{
-    background-color: grey;
-}
-#btn-del{
-    background-color: red;
-}
 
 
 #todo-container #checkbox{
    display: inline;
    margin: 1em;
    float: left;
+   
+}
+#checkbox{
+    margin-top: 5px;
 }
 #Todo-List{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     list-style: none;
     width: 50%;
     display: inline-block;
     min-width: 40em;
 }
 li{
-    border-top: 2px black solid;
+    border-top: 2px solid grey;
+    background-color: aliceblue;
 }
 #desc-date{
     display: inline-block;
     width: 65%;
 }
 #category-todo{
-    width: 5em;
+    width: 8em;
     height: 2em;
+    text-transform: uppercase;
 }
 #category-todo{
     margin: 1em;
@@ -86,4 +133,12 @@ li{
     float: right;
     justify-content: center;
     align-items: center;
+}
+
+h4{
+    font-size: 1rem;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 400;
+    text-transform: uppercase;
+    
 }

@@ -1,9 +1,5 @@
 const Todo = require('../models/todo');
-
-
-
 module.exports.home = function (req, res) {
-    // fetching the data from Todo Collection
     Todo.find({},).catch((err) => console.log("Error in fetching contacts from db")).then(TodoList =>{
         return res.render('home',{
             title: 'Todo',
@@ -25,13 +21,13 @@ module.exports.createTodo = function (req, res) {
             color = "red";
             break;
         case "Work":
-            color = "red";
+            color = "crimson";
             break;
         case "Cleaning":
-            color = "White";
+            color = "cyan";
             break;
         default:
-            color = "blue";
+            color = "lightblue";
     }
     // creating a new Todo 
     Todo.create(
@@ -49,22 +45,9 @@ module.exports.createTodo = function (req, res) {
 // delete Todo
 module.exports.deleteTodo = function (req, res) {
     console.log(req.body);
-    // delete each todo who's id is sent from user
     Todo.deleteMany({ _id: req.body },).then(result=>{
         console.log('To do deleted successfully', result);
     }).catch((err)=>console.log('error in deleting todo')); 
         res.redirect('/');
 }
 
-// module.exports.deleteTodo = async function (req, res) {
-//     try {
-//         console.log(req.body);
-//         // delete each todo who's id is sent from the user
-//         const result = await Todo.deleteMany({ _id: req.body });
-//         console.log('Todo deleted successfully', result);
-//         res.redirect('/');
-//     } catch (err) {
-//         console.error('Error in deleting TODO:', err);
-//         res.status(500).json({ error: 'Error deleting TODO' });
-//     }
-// };
