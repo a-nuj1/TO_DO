@@ -1,0 +1,86 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/home.css">
+
+    <title> <%= title%> </title>
+    <style>
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <H1>TODO-APP</H1>
+    <main>
+        <div id="create-todo">
+            // form of TODO to create a task
+            <form action="/create-todo" id='create-todo-form' method="POST">
+                <div id="desc">
+                    <h3>Description</h3>
+                    <textarea cols="70" rows="4" name="desc" required="true"
+                        placeholder="What do u need to do?"></textarea>
+                </div>
+                <div id="cate-date">
+                    <label for="category">Category</label>
+                    <select name="category" id="category" required="true">
+                        <option value="" disabled selected>Choose a Category</option>
+                        <option value="Personal">Personal</option>
+                        <option value="Work">Work</option>
+                        <option value="School">School</option>
+                        <option value="Cleaning">Cleaning</option>
+                        <option value="Other">Other</option>
+                    </select>
+
+                    <label for="date">due-date</label>
+                    <input type="date" id="date" name="date">
+                </div>
+            </form>
+        </div>
+        <div>
+            <button type="submit" form="create-todo-form" id="btn-add"> <span><i class="fa fa-plus"
+                        aria-hidden="true"></i> ADD
+                    TASK</span>
+            </button>
+            <button type="submit" form="destroy-todo-form" id="btn-del"> <span><i class="fa fa-trash"
+                        aria-hidden="true"></i> DELETE
+                    TASK</span> </button>
+        </div>
+
+    </main>
+    // form to send the ids of tasks to delete
+    <form action="/delete-todo" method="POST" id="destroy-todo-form">
+
+        <ul id="Todo-List">
+            // list of pending Tasks
+            <% for(var todo of todo_list){ %>
+
+            <li id="todo-container">
+                // send the Id of task's who's Checkbox is selected
+                <input type="checkbox" id="checkbox" name="$in" id="" value="<%=todo.id%>">
+
+                <div id="desc-date">
+                    <h4><%= todo.desc;%></h4>
+
+                    <% if(todo.date == null){ %>
+                    <p><i class="fa fa-calendar" aria-hidden="true"></i>
+                        No deadlines</p>
+                    <%}else{%>
+                    <p><i class="fa fa-calendar" aria-hidden="true"></i>
+                        <%=todo.date%>
+                    </p>
+                    <%}%>
+                </div>
+            <span id="category-todo" style="background-color:<%=todo.color%>">
+                    <%=todo.category%>
+                    </span>
+                </div>
+            </li>
+            <%}%>
+</ul>
+</form>
+
+    <script src="/js/home.js"></script>
+</body>
+</html>
